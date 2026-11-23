@@ -44,6 +44,7 @@ classDiagram
         -vector~vector~Cell~~ cells
         +Grid(int width, int height, bool toric)
         +getCell(int x, int y) Cell&
+        +getCell(int x, int y) const Cell&
         +countAliveNeighbours(int x, int y) int
         +getWidth() int
         +getHeight() int

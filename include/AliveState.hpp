@@ -1,5 +1,5 @@
 #include <iostream> 
-#include <CellState.hpp>
+#include "CellState.hpp"
 
 class AliveState : public CellState{
     public: 

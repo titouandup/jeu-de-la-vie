@@ -9,3 +9,10 @@ Grid::Grid(int width, int height, bool toric)
     }
     cells.assign(height, std::vector<Cell>(width, Cell(false)));
 }
+
+const Cell& Grid::getCell(int x, int y) const {
+    if (x < 0 || x >= width || y < 0 || y >= height) {
+        throw GameException("Cell out of grid");
+    }
+    return cells[y][x];
+}

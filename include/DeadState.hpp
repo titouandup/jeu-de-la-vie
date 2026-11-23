@@ -3,8 +3,6 @@
 
 class DeadState : public CellState{
     public: 
-    bool isAlive() const override {
-        return false;
-    }
+    bool isAlive() const override;
 
 };

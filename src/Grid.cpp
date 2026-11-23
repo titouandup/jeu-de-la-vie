@@ -16,3 +16,18 @@ const Cell& Grid::getCell(int x, int y) const {
     }
     return cells[y][x];
 }
+
+Cell& Grid::getCell(int x, int y) {
+    // On délègue à la version const pour ne pas dupliquer le test de bornes.
+    // Le const_cast est sûr : *this n'est pas const dans cette méthode.
+    const Grid& self = *this;
+    return const_cast<Cell&>(self.getCell(x, y));
+}
+
+int Grid::getWidth() const {
+    return width;
+}
+
+int Grid::getHeight() const {
+    return height;
+}

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "EtatCellule.hpp"
 
 class Cellule{
     protected:

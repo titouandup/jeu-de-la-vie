@@ -1,10 +1,8 @@
 #include <iostream> 
-#include <Cell.hpp>
+#include <CellState.hpp>
 
-class AliveState : public Cell{
+class AliveState : public CellState{
     public: 
-    AliveState() : Cell(true){} 
-
     bool isAlive() const override{
         return true;
     }

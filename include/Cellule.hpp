@@ -11,7 +11,7 @@ class Cellule{
 
     virtual ~Cellule(){}
 
-    bool EstVivante() const{
+     virtual bool EstVivante() const{
         return etat;
     }
 

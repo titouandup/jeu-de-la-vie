@@ -57,3 +57,17 @@ int Grid::countAliveNeighbours(int x, int y) const {
     }
     return count;
 }
+
+bool Grid::operator==(const Grid& other) const {
+    if (width != other.width || height != other.height || toric != other.toric) {
+        return false;                           // dimensions ou mode différents : grilles différentes
+    }
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            if (cells[y][x].isAlive() != other.cells[y][x].isAlive()) {
+                return false;                   // une seule case différente suffit
+            }
+        }
+    }
+    return true;
+}

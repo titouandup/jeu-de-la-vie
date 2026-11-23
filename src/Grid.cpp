@@ -31,3 +31,29 @@ int Grid::getWidth() const {
 int Grid::getHeight() const {
     return height;
 }
+
+int Grid::countAliveNeighbours(int x, int y) const {
+    if (x < 0 || x >= width || y < 0 || y >= height) {
+        throw GameException("Cell out of grid");
+    }
+    int count = 0;
+    for (int dy = -1; dy <= 1; dy++) {
+        for (int dx = -1; dx <= 1; dx++) {
+            if (dx == 0 && dy == 0) {
+                continue;                       // on ne compte pas la cellule elle-même
+            }
+            int nx = x + dx;
+            int ny = y + dy;
+            if (toric) {
+                nx = (nx + width) % width;      // le bord gauche rejoint le bord droit
+                ny = (ny + height) % height;
+            } else if (nx < 0 || nx >= width || ny < 0 || ny >= height) {
+                continue;                       // hors grille : pas de voisin
+            }
+            if (getCell(nx, ny).isAlive()) {
+                count++;
+            }
+        }
+    }
+    return count;
+}

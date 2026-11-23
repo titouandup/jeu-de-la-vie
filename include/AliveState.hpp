@@ -1,4 +1,3 @@
-#include <iostream> 
 #include "CellState.hpp"
 
 class AliveState : public CellState{

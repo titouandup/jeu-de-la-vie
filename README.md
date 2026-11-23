@@ -25,7 +25,7 @@ Projet block POO CPI A2 : Jeu de la vie en C++.
 | Grid | `Grid.hpp` écrit, `Grid.cpp` : constructeur écrit | en cours |
 | Game | `Game.hpp`, `.cpp` | à faire |
 | FileManager | `FileManager.hpp`, `.cpp` | à faire |
-| GameException | `GameException.hpp` | à faire |
+| GameException | `GameException.hpp` | écrit |
 | Renderer | `Renderer.hpp` | à faire |
 | ConsoleRenderer | `ConsoleRenderer.hpp`, `.cpp` | à faire |
 | SfmlRenderer | `SfmlRenderer.hpp`, `.cpp` | à faire |

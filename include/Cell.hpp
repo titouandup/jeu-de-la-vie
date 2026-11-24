@@ -1,20 +1,15 @@
 #pragma once
 #include <iostream>
+#include <memory>
 #include "CellState.hpp"
 
 class Cell{
-    protected:
-    bool alive;
+    private: 
+    std::unique_ptr<CellState>state;
 
-    public : 
-        Cell(bool e){
-            alive = e;
-        }
+    public: 
+    bool isAlive() const; 
+    bool isObstacle;
 
-    virtual ~Cell(){}
-
-     virtual bool isAlive() const{
-        return alive;
-    }
-
+    Cell(std::unique_ptr<CellState>s);
 };
